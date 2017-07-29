@@ -7,7 +7,7 @@ import com.daxch.api.core.devices.RepositoryDeviceProvider;
 
 import java.util.List;
 
-public final class CoreFacade {
+public class CoreFacade {
 
     private static CoreFacade INSTANCE;
 
