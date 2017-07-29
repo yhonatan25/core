@@ -42,7 +42,7 @@ public class RepositoryDeviceProviderTest {
 
     private List<Device> getDeviceList() {
         return asList(aDevice("00000000").name("Living Room").type("LIVING_ROOM").connected(TRUE).build(),
-                aDevice("11111111").name("Bed Room").type("BED_ROOM").connected(FALSE).build(),
+                aDevice("11111111").name("Bedroom").type("BEDROOM").connected(FALSE).build(),
                 aDevice("22222222").name("Kitchen").type("KITCHEN").connected(FALSE).build());
     }
 
