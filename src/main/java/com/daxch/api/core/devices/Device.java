@@ -30,6 +30,20 @@ public class Device {
         return connected;
     }
 
+    @Override
+    public boolean equals(final Object object) {
+        if (object instanceof Device) {
+            final Device otherDevice = (Device) object;
+            return this.id.equals(otherDevice.getId());
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id.hashCode();
+    }
+
     public static class DeviceBuilder {
         private final String id;
         private String name;
@@ -60,7 +74,11 @@ public class Device {
         }
 
         public Device build() {
-            return new Device(this);
+            final Device device = new Device(this);
+            if (device.id == null || device.id.isEmpty()) {
+                throw new IllegalStateException("Device cannot have null or empty id.");
+            }
+            return device;
         }
     }
 }
